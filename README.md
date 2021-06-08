@@ -1,11 +1,11 @@
 # ConfGF
 
-<p align="left">
-  <img src="assets/cover.png" width="200">
+<p align="center">
+  <img src="assets/cover.png" width="300">
 </p>
 
-<p align="left">
-  <img src="assets/demo.gif" width="200">
+<p align="center">
+  <img src="assets/demo.gif" width="300">
 </p>
 
 The official code for Learning Gradient Fields for Molecular Conformation Generation (ICML 2021)
