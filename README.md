@@ -1,4 +1,4 @@
-# Learning Gradient Fields for Molecular Conformation Generation (ConfGF)
+[![ConfGF](assets/logo.png)]
 
 ----------------------------
 
