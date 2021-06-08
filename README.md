@@ -1,4 +1,4 @@
-[![ConfGF](assets/logo.png)]
+![ConfGF](assets/logo.png)
 
 ----------------------------
 
