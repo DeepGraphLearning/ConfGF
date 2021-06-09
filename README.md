@@ -77,6 +77,59 @@ We also provide the preprocessed datasets in a dropbox folder(https://dataverse.
 
 
 
+## Training
+
+* `python  script/main.py --config ./config/qm9_50k_expmin.yml --train`
+* `python  script/main.py --config ./config/drugs_50k_expmin.yml --train`
+* `python  script/main.py --config ./config/iso17.yml --train`
+
+
+## Generation
+
+* `python -u script/main.py --config ./config/qm9_50k_expmin.yml --test --start 0 --end 200`
+  * `solver.generate_test_distance`
+  * `solver.generate_test_conf`
+* `python -u script/main.py --config ./config/drugs_50k_expmin.yml --test --start 0 --end 200`
+  * `solver.generate_test_distance`
+  * `solver.generate_test_conf`
+* `python -u script/main.py --config ./config/iso17_0.1.yml --test --start 0 --end 30`
+  * `solver.generate_test_distance`
+  * `solver.generate_test_conf`
+
+## Visualizing molecules with PyMol
+
+### Start Setup
+
+1. `pymol -R`
+2. `Display - Background - White`
+3. `Display - Color Space - CMYK`
+4. `Display - Quality - Maximal Quality`
+5. `Display Grid`
+   1. by object:  use `set grid_slot, int, mol_name` to put the molecule into the corresponding slot
+   2. by state: align all conformations in a single slot
+   3. by object-state: align all conformations and put them in separate slots. (`grid_slot` dont work!)
+6. `Setting - Line and Sticks - Ball and Stick on - Ball and Stick ratio: 1.5`
+7. `Setting - Line and Sticks - Stick radius: 0.2 - Stick Hydrogen Scale: 1.0`
+
+### Show Molecule
+
+1. To show molecules
+
+   1. `hide everything`
+   2. `show sticks`
+
+2. To align molecules: `align name1, name2`
+
+3. Convert RDKit mol to Pymol
+
+   ```python
+   from rdkit.Chem import PyMol
+   v= PyMol.MolViewer()
+   rdmol = Chem.MolFromSmiles('C')
+   v.ShowMol(rdmol, name='mol')
+   v.SaveFile('mol.pkl')
+   ```
+
 
 
 ## Citation
