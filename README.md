@@ -8,7 +8,7 @@
 [Project Page]: http://chenceshi.com/
 
 
-The official implementation of Learning Gradient Fields for Molecular Conformation Generation (ICML 2021) https://arxiv.org/abs/2105.03902
+The official implementation of Learning Gradient Fields for Molecular Conformation Generation (ICML 2021 **Long talk**)  
 
 Code coming soon !
 
@@ -24,7 +24,6 @@ Code coming soon !
 
 ### Install via Conda (Recommended)
 
-Step 1: Create a conda environment named `confgf` from `env.yml` :
 
 ```bash
 # Clone the environment
@@ -69,7 +68,13 @@ python setup.py install
 ```
 
 
-## Dataset Preparation
+## Dataset 
+### Offical Dataset
+The offical raw dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+We also provide the preprocessed datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+
+### Prepare the raw dataset (optional)
+
 
 
 
