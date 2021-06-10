@@ -71,10 +71,45 @@ python setup.py install
 ## Dataset 
 ### Offical Dataset
 The offical raw dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+
 We also provide the preprocessed datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
-### Prepare the raw dataset (optional)
+### Prepare your own dataset from scratch (optional)
+Download the raw dataset and unpack it.
 
+```bash
+tar xvf ~/rdkit_folder.tar.gz -C ~/GEOM
+```
+
+Preprocess the raw dataset.
+
+```bash
+python script/process_GEOM_dataset.py --base_path GEOM --dataset_name qm9 --confmin 50 --confmax 500
+python script/process_GEOM_dataset.py --base_path GEOM --dataset_name drugs --confmin 50 --confmax 100
+```
+
+The final folder structure will look like this: 
+
+```
+GEOM
+|___rdkit_folder  # raw dataset
+|   |___qm9 # raw qm9 dataset
+|   |___drugs # raw drugs dataset
+|   |___summary_drugs.json
+|   |___summary_qm9.json
+|   
+|___qm9_processed
+|   |___train_data_40k.pkl
+|   |___val_data_5k.pkl
+|   |___test_data_200.pkl
+|   
+|___drugs_processed
+|   |___train_data_39k.pkl
+|   |___val_data_5k.pkl
+|   |___test_data_200.pkl
+|
+...
+```
 
 
 ## Training
