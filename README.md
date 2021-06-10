@@ -70,18 +70,18 @@ python setup.py install
 
 ## Dataset 
 ### Offical Dataset
-The offical raw dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+The offical raw GEOM dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
-We also provide the preprocessed datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+We also provide the preprocessed GEOM datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
-### Prepare your own dataset from scratch (optional)
-Download the raw dataset and unpack it.
+### Prepare your own GEOM dataset from scratch (optional)
+Download the raw GEOM dataset and unpack it.
 
 ```bash
 tar xvf ~/rdkit_folder.tar.gz -C ~/GEOM
 ```
 
-Preprocess the raw dataset.
+Preprocess the raw GEOM dataset.
 
 ```bash
 python script/process_GEOM_dataset.py --base_path GEOM --dataset_name qm9 --confmin 50 --confmax 500
@@ -114,9 +114,11 @@ GEOM
 
 ## Training
 
-* `python  script/main.py --config ./config/qm9_50k_expmin.yml --train`
-* `python  script/main.py --config ./config/drugs_50k_expmin.yml --train`
-* `python  script/main.py --config ./config/iso17.yml --train`
+```bash
+python script/train.py --config ./config/qm9_default.yml
+python script/train.py --config ./config/drugs_default.yml
+python script/train.py --config ./config/iso17_default.yml
+```
 
 
 ## Generation
