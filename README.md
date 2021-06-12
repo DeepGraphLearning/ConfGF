@@ -73,8 +73,8 @@ python setup.py install
 The offical raw GEOM dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
 ### Preprocessed dataset
-We provide the preprocessed GEOM datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
-
+We provide the preprocessed datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+For ISO17 dataset, we use the default split of GraphDG(https://github.com/gncs/graphdg).
 
 ### Prepare your own GEOM dataset from scratch (optional)
 Download the raw GEOM dataset and unpack it.
@@ -109,6 +109,10 @@ GEOM
 |   |___train_data_39k.pkl
 |   |___val_data_5k.pkl
 |   |___test_data_200.pkl
+|
+iso17
+|___iso17_split-0_train_processed.pkl
+|___iso17_split-0_test_processed.pkl
 |
 ...
 ```
