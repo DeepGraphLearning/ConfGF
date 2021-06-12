@@ -1,0 +1,74 @@
+train:
+  batch_size: 128
+  seed: 2021
+  epochs: 300  
+  shuffle: true
+  resume_train: false
+  eval: true
+  num_workers: 0
+  gpus:
+    - 0
+    - null
+    - null
+    - null
+  anneal_power: 2.0
+  save: true
+  save_path: /home/shichenc/scratch/confgf/train
+  resume_checkpoint: null
+  resume_epoch: null
+  log_interval: 400
+  optimizer:
+    type: Adam
+    lr: 0.001
+    weight_decay: 0.000
+    dropout: 0.0
+  scheduler:
+    type: plateau
+    factor: 0.6
+    # factor: 0.95
+    patience: 10
+    min_lr: 1e-4
+    
+
+test:
+  init_checkpoint: /home/shichenc/scratch/confgf/train/qm9_default
+  output_path: /home/shichenc/scratch/confgf/test
+  epoch: 284
+  gen:
+    dg_step_size: 3.0
+    dg_num_steps: 1000  
+    steps_d: 100
+    step_lr_d: 0.000002
+    steps_pos: 100
+    step_lr_pos: 0.0000024
+    clip: 1000
+    min_sigma: 0.0
+    verbose: 1
+
+
+data:
+  base_path: /home/shichenc/scratch/dataset/GEOM_new
+  dataset: qm9
+  train_set: train_data_40k.pkl
+  val_set: val_data_5k.pkl
+  test_set: test_data_200.pkl
+  coverage_threshold: 0.5
+
+
+model:
+  name: qm9_default
+  hidden_dim: 256
+  num_convs: 4
+  sigma_begin: 10
+  sigma_end: 0.01
+  num_noise_level: 50
+  order: 3
+  mlp_act: relu
+  gnn_act: relu
+  cutoff: 10.0
+  short_cut: true
+  concat_hidden: false   
+  noise_type: symmetry
+  edge_encoder: mlp
+
+
