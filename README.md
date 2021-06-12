@@ -72,7 +72,9 @@ python setup.py install
 ### Offical Dataset
 The offical raw GEOM dataset is avaiable here(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
-We also provide the preprocessed GEOM datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+### Preprocessed dataset
+We provide the preprocessed GEOM datasets in a dropbox folder(https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+
 
 ### Prepare your own GEOM dataset from scratch (optional)
 Download the raw GEOM dataset and unpack it.
