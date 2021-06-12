@@ -131,9 +131,11 @@ You can generate conformations of a molecule by feeding its SMILES into the mode
 python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGF --smiles c1ccccc1
 python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGFDist --smiles c1ccccc1
 ```
+
 <p align="center">
   <img src="assets/benzene-crop.png" width="300">
 </p>
+
 Here we use the models trained on `GEOM-QM9`  to generate conformations for the benzene. The argument `--generator` indicates the type of the generator, i.e., `ConfGF` vs. `ConfGFDist`. See the ablation study (Table 5) in the original paper for more details.
 
 You can also generate conformations for an entire test set.
