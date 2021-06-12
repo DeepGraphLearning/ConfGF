@@ -111,27 +111,48 @@ GEOM
 ...
 ```
 
-
 ## Training
 
-```bash
-python script/train.py --config ./config/qm9_default.yml
-python script/train.py --config ./config/drugs_default.yml
-python script/train.py --config ./config/iso17_default.yml
-```
+All hyper-parameters and training details are provided in config files (`./config/*.yml`), and free feel to tune these parameters.
 
+```bash
+python -u script/train.py --config ./config/qm9_default.yml
+python -u script/train.py --config ./config/drugs_default.yml
+python -u script/train.py --config ./config/iso17_default.yml
+```
 
 ## Generation
 
-* `python -u script/main.py --config ./config/qm9_50k_expmin.yml --test --start 0 --end 200`
-  * `solver.generate_test_distance`
-  * `solver.generate_test_conf`
-* `python -u script/main.py --config ./config/drugs_50k_expmin.yml --test --start 0 --end 200`
-  * `solver.generate_test_distance`
-  * `solver.generate_test_conf`
-* `python -u script/main.py --config ./config/iso17_0.1.yml --test --start 0 --end 30`
-  * `solver.generate_test_distance`
-  * `solver.generate_test_conf`
+We provide the checkpoints of two trained models, i.e., `qm9_default` and `drugs_default`.
+
+You can generate conformations of a molecule by feeding its SMILES into the model:
+
+```bash
+python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGF --smiles c1ccccc1
+python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGFDist --smiles c1ccccc1
+```
+<p align="center">
+  <img src="assets/benzene-crop.png" width="300">
+</p>
+Here we use the models trained on `GEOM-QM9`  to generate conformations for the benzene. The argument `--generator` indicates the type of the generator, i.e., `ConfGF` vs. `ConfGFDist`. See the ablation study (Table 5) in the original paper for more details.
+
+You can also generate conformations for an entire test set.
+```bash
+python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGF \
+                        --start 0 --end 200 \
+
+python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGFDist \
+                        --start 0 --end 200 \                                               
+
+python -u script/gen.py --config ./config/drugs_default.yml --generator ConfGF \
+                        --start 0 --end 200 \
+
+python -u script/gen.py --config ./config/drugs_default.yml --generator ConfGFDist \
+                        --start 0 --end 200 \      
+```
+Here `start` and `end` indicate the range of the test set that we want to use. All hyper-parameters related to generation can be set in config files.
+
+
 
 ## Visualizing molecules with PyMol
 
@@ -167,6 +188,13 @@ python script/train.py --config ./config/iso17_default.yml
    v.SaveFile('mol.pkl')
    ```
 
+### Make the trajectory for Langevin dynamics
+1. load a sequence of pymol objects named `traj*.pkl` into the PyMol, where `traji.pkl` is the `i-th` conformation in the trajectory.
+2. Join states: `join_states mol, traj*, 0`
+3. Delete useless object: `delete traj*`
+4. `Movie - Program - State Loop - Full Speed`
+5. Export the movie to a sequence of png files: `File - Export Movie As - PNG Images`
+6. Use photoshop use convert the png sequence to a GIF with the transparent background.
 
 
 ## Citation
