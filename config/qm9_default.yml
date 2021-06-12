@@ -52,7 +52,6 @@ data:
   train_set: train_data_40k.pkl
   val_set: val_data_5k.pkl
   test_set: test_data_200.pkl
-  coverage_threshold: 0.5
 
 
 model:

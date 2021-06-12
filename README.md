@@ -115,14 +115,18 @@ GEOM
 
 ## Training
 
+<p align="center">
+  <img src="assets/training.png" /> 
+</p>
+
 All hyper-parameters and training details are provided in config files (`./config/*.yml`), and free feel to tune these parameters.
 
 You can train the model with the following commands:
 
 ```bash
-python -u script/train.py --config ./config/qm9_default.yml
-python -u script/train.py --config ./config/drugs_default.yml
-python -u script/train.py --config ./config/iso17_default.yml
+python -u script/train.py --config_path ./config/qm9_default.yml
+python -u script/train.py --config_path ./config/drugs_default.yml
+python -u script/train.py --config_path ./config/iso17_default.yml
 ```
 
 The checkpoint of the models will be saved into a directory specified in config files.
@@ -134,8 +138,8 @@ We provide the checkpoints of two trained models, i.e., `qm9_default` and `drugs
 You can generate conformations of a molecule by feeding its SMILES into the model:
 
 ```bash
-python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGF --smiles c1ccccc1
-python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGFDist --smiles c1ccccc1
+python -u script/gen.py --config_path ./config/qm9_default.yml --generator ConfGF --smiles c1ccccc1
+python -u script/gen.py --config_path ./config/qm9_default.yml --generator ConfGFDist --smiles c1ccccc1
 ```
 
 <p align="center">
@@ -146,20 +150,23 @@ Here we use the models trained on `GEOM-QM9`  to generate conformations for the 
 
 You can also generate conformations for an entire test set.
 ```bash
-python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGF \
+python -u script/gen.py --config_path ./config/qm9_default.yml --generator ConfGF \
                         --start 0 --end 200 \
 
-python -u script/gen.py --config ./config/qm9_default.yml --generator ConfGFDist \
-                        --start 0 --end 200 \                                               
-
-python -u script/gen.py --config ./config/drugs_default.yml --generator ConfGF \
+python -u script/gen.py --config_path ./config/qm9_default.yml --generator ConfGFDist \
                         --start 0 --end 200 \
 
-python -u script/gen.py --config ./config/drugs_default.yml --generator ConfGFDist \
-                        --start 0 --end 200 \      
+python -u script/gen.py --config_path ./config/drugs_default.yml --generator ConfGF \
+                        --start 0 --end 200 \
+
+python -u script/gen.py --config_path ./config/drugs_default.yml --generator ConfGFDist \
+                        --start 0 --end 200 \
 ```
 Here `start` and `end` indicate the range of the test set that we want to use. All hyper-parameters related to generation can be set in config files.
 
+<p align="center">
+  <img src="assets/drug_samples.png" /> 
+</p>
 
 
 ## Visualizing molecules with PyMol
@@ -201,8 +208,8 @@ Here `start` and `end` indicate the range of the test set that we want to use. A
 2. Join states: `join_states mol, traj*, 0`
 3. Delete useless object: `delete traj*`
 4. `Movie - Program - State Loop - Full Speed`
-5. Export the movie to a sequence of png files: `File - Export Movie As - PNG Images`
-6. Use photoshop use convert the png sequence to a GIF with the transparent background.
+5. Export the movie to a sequence of PNG files: `File - Export Movie As - PNG Images`
+6. Use photoshop to convert the PNG sequence to a GIF with the transparent background.
 
 
 ## Citation
