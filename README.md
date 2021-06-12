@@ -117,11 +117,15 @@ GEOM
 
 All hyper-parameters and training details are provided in config files (`./config/*.yml`), and free feel to tune these parameters.
 
+You can train the model with the following commands:
+
 ```bash
 python -u script/train.py --config ./config/qm9_default.yml
 python -u script/train.py --config ./config/drugs_default.yml
 python -u script/train.py --config ./config/iso17_default.yml
 ```
+
+The checkpoint of the models will be saved into a directory specified in config files.
 
 ## Generation
 
