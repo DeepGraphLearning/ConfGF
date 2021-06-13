@@ -1,17 +1,3 @@
-<head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    </script>
-</head>
-
-
-
 ![ConfGF](assets/logo.png)
 
 ----------------------------
@@ -208,7 +194,7 @@ python -u script/get_task1_results.py \
 COV and MAT scores on GEOM-QM9
 ^^^^^^^^
 
-|    QM9     | COV-Mean (%) | COV-Median (%) | MAT-Mean ($\AA$) | MAT-Median ($\AA$) |
+|    QM9     | COV-Mean (%) | COV-Median (%) | MAT-Mean ($`\AA`$) | MAT-Median ($\AA$) |
 | :--------: | :----------: | :------------: | :--------------: | :----------------: |
 |   ConfGF   |  **91.06**   |   **95.76**    |    **0.2649**    |     **0.2668**     |
 | ConfGFDist |    85.37     |     88.59      |      0.3435      |       0.3548       |
