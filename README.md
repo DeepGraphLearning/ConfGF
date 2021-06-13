@@ -184,11 +184,9 @@ We report the results of each task in the following tables. Results of `ConfGF` 
 The COV and MAT scores on the GEOM datasets can be calculated using the following commands:
 
 ```bash
-python -u script/get_task1_results.py \
-							--input dir_of_QM9_samples --core 10 --threshold 0.5  
+python -u script/get_task1_results.py --input dir_of_QM9_samples --core 10 --threshold 0.5  
 
-python -u script/get_task1_results.py \
-							--input dir_of_Drugs_samples --core 10 --threshold 1.25  
+python -u script/get_task1_results.py --input dir_of_Drugs_samples --core 10 --threshold 1.25  
 ```
 
 
@@ -197,7 +195,7 @@ python -u script/get_task1_results.py \
 Table: COV and MAT scores on GEOM-QM9
 
 
-|    QM9     | COV-Mean (%) | COV-Median (%) | MAT-Mean ($\overset{\circ}{\rm{A}}$) | MAT-Median ($\overset{\circ}{\rm{A}}$) |
+|    QM9     | COV-Mean (%) | COV-Median (%) | MAT-Mean (\AA) | MAT-Median (\AA) |
 | :--------: | :----------: | :------------: | :----------------------------------: | :------------------------------------: |
 | **ConfGF** |  **91.06**   |   **95.76**    |              **0.2649**              |               **0.2668**               |
 | ConfGFDist |    85.37     |     88.59      |                0.3435                |                 0.3548                 |
@@ -212,7 +210,7 @@ Table: COV and MAT scores on GEOM-Drugs
 
 
 
-|   Drugs    | COV-Mean (%) | COV-Median (%) | MAT-Mean ($\overset{\circ}{\rm{A}}$) | MAT-Median ($\overset{\circ}{\rm{A}}$) |
+|   Drugs    | COV-Mean (%) | COV-Median (%) | MAT-Mean (\AA) | MAT-Median (\AA) |
 | :--------: | :----------: | :------------: | :----------------------------------: | :------------------------------------: |
 | **ConfGF** |  **62.54**   |   **71.32**    |              **1.1637**              |               **1.1617**               |
 | ConfGFDist |    49.96     |     48.12      |                1.2845                |                 1.2827                 |
