@@ -31,9 +31,9 @@ train:
 
 
 test:
-  init_checkpoint: null
+  init_checkpoint: /home/shichenc/scratch/confgf/train/iso17_default
   output_path: /home/shichenc/scratch/confgf/test
-  epoch: null
+  epoch: 106
   gen:
     dg_step_size: 3.0
     dg_num_steps: 1000  
@@ -42,7 +42,7 @@ test:
     steps_pos: 100
     step_lr_pos: 0.0002
     clip: 1000
-    min_sigma: 0.0
+    min_sigma: 0.
     verbose: 1  
 
 
