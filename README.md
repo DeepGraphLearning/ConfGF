@@ -2,8 +2,7 @@
 
 ----------------------------
 
-<a href="https://arxiv.org/abs/2105.03902" target="_blank">[arXiv]</a> | [Project Page] 
-
+[[PDF]](https://arxiv.org/abs/2105.03902) | [[Slides]](https://drive.google.com/file/d/1wA5Qu98dYPmEdoGt1QQcYfoUJG3Ndnec/view?usp=sharing)
 
 
 
@@ -69,11 +68,11 @@ python setup.py install
 
 ## Dataset 
 ### Offical Dataset
-The offical raw GEOM dataset is avaiable here (https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
+The offical raw GEOM dataset is avaiable [[here]](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/JNGTDF).
 
 ### Preprocessed dataset
-We provide the preprocessed datasets (GEOM, ISO17) in a google drive folder (https://drive.google.com/drive/folders/10dWaj5lyMY0VY4Zl0zDPCa69cuQUGb-6?usp=sharing).
-For ISO17 dataset, we use the default split of GraphDG (https://github.com/gncs/graphdg).
+We provide the preprocessed datasets (GEOM, ISO17) in a [[google drive folder]](https://drive.google.com/drive/folders/10dWaj5lyMY0VY4Zl0zDPCa69cuQUGb-6?usp=sharing).
+For ISO17 dataset, we use the default split of [[GraphDG]](https://github.com/gncs/graphdg).
 
 ### Prepare your own GEOM dataset from scratch (optional)
 Download the raw GEOM dataset and unpack it.
@@ -136,7 +135,7 @@ The checkpoint of the models will be saved into a directory specified in config 
 
 ## Generation
 
-We provide the checkpoints of three trained models, i.e., `qm9_default`, `drugs_default` and `iso17_default` in a google drive folder (https://drive.google.com/drive/folders/10dWaj5lyMY0VY4Zl0zDPCa69cuQUGb-6?usp=sharing).
+We provide the checkpoints of three trained models, i.e., `qm9_default`, `drugs_default` and `iso17_default` in a [[google drive folder]](https://drive.google.com/drive/folders/10dWaj5lyMY0VY4Zl0zDPCa69cuQUGb-6?usp=sharing).
 
 You can generate conformations of a molecule by feeding its SMILES into the model:
 
