@@ -4,8 +4,7 @@
 
 <a href="https://arxiv.org/abs/2105.03902" target="_blank">[arXiv]</a> | [Project Page] 
 
-[arXiv]: https://arxiv.org/abs/2105.03902
-[Project Page]: http://chenceshi.com/
+
 
 
 The official implementation of Learning Gradient Fields for Molecular Conformation Generation (ICML 2021 **Long talk**)  
