@@ -5,10 +5,8 @@
 [[PDF]](https://arxiv.org/abs/2105.03902) | [[Slides]](https://drive.google.com/file/d/1wA5Qu98dYPmEdoGt1QQcYfoUJG3Ndnec/view?usp=sharing)
 
 
-
 The official implementation of Learning Gradient Fields for Molecular Conformation Generation (ICML 2021 **Long talk**)  
 
-Code coming soon !
 
 <p align="center">
   <img src="assets/sampling.png" /> 
