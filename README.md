@@ -1,6 +1,7 @@
 ![ConfGF](assets/logo.png)
 
 ----------------------------
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/DeepGraphLearning/ConfGF/blob/main/LICENSE)
 
 [[PDF]](https://arxiv.org/abs/2105.03902) | [[Slides]](https://drive.google.com/file/d/1wA5Qu98dYPmEdoGt1QQcYfoUJG3Ndnec/view?usp=sharing)
 
